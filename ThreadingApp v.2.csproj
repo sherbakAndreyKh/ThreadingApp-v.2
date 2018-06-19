@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cutlery.cs" />
+    <Compile Include="Eater.cs" />
+    <Compile Include="Fork.cs" />
+    <Compile Include="Knife.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,7 @@
+D:\Trash\ThreadingApp v.2\ThreadingApp v.2\bin\Debug\ThreadingApp v.2.exe.config
+D:\Trash\ThreadingApp v.2\ThreadingApp v.2\bin\Debug\ThreadingApp v.2.exe
+D:\Trash\ThreadingApp v.2\ThreadingApp v.2\bin\Debug\ThreadingApp v.2.pdb
+D:\Trash\ThreadingApp v.2\ThreadingApp v.2\obj\Debug\ThreadingApp v.2.csprojResolveAssemblyReference.cache
+D:\Trash\ThreadingApp v.2\ThreadingApp v.2\obj\Debug\ThreadingApp v.2.csproj.CoreCompileInputs.cache
+D:\Trash\ThreadingApp v.2\ThreadingApp v.2\obj\Debug\ThreadingApp v.2.exe
+D:\Trash\ThreadingApp v.2\ThreadingApp v.2\obj\Debug\ThreadingApp v.2.pdb
