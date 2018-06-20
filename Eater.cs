@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ThreadingApp_v._2
@@ -13,7 +14,9 @@ namespace ThreadingApp_v._2
         static object locker = new object();
 
         public Fork Fork { get; set; }
+        public bool GetFork = false;
         public Knife Knife { get; set; }
+        public bool GetKnife = false;
 
         public Eater(string name)
         {
@@ -23,25 +26,50 @@ namespace ThreadingApp_v._2
 
         public void Eat(Fork Fork, Knife Knife)
         {
+
+                if (TakeCutlery(Fork, Knife) == true)
+                {
+                    Console.WriteLine($"{Name} Eating");
+                }
+          
+
+            Thread.Sleep(4000);
+
+            Fork.Freed();
+            GetFork = false;
+            Knife.Freed();
+            GetKnife = false;
+            Console.WriteLine($"{Name} Whaiting");
+        }
+
+
+        private bool TakeCutlery(Fork fork,Knife knife)
+        {
             lock (locker)
             {
-                if (Fork.State == true && Knife.State == true)
+                while (true)
                 {
+                    if (fork.State == true)
+                    {
+                        fork.IsUsed();
+                        GetFork = true;
+                        Console.WriteLine($"{Name} take fork");
+                    }
+                    else if (knife.State == true)
+                    {
+                        knife.IsUsed();
+                        GetKnife = true;
+                        Console.WriteLine($"{Name} take knife");
+                    }
 
-                    Fork.IsUsed();
-                    Knife.IsUsed();
-
-                    Console.WriteLine($"{Name} omnomonomonom");
-
-                    Fork.Freed();
-                    Knife.Freed();
-
-                }
-                else
-                {
-                    Console.WriteLine($"{Name} Can't Eating Cutlery State is false(((");
+                    else if (GetFork == true && GetKnife == true)
+                    {
+                        break;
+                    }
                 }
             }
+                return true;
+            
         }
 
     }
