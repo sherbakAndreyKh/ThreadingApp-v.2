@@ -9,12 +9,13 @@ namespace ThreadingApp_v._2
     public abstract class Cutlery
     {
         public bool State;
-        
+
         public Cutlery()
         {
-           State = true;
-        }
+            State = true;
 
+        }
+       
         public void IsUsed()
         {
             State = false;
@@ -24,6 +25,6 @@ namespace ThreadingApp_v._2
         {
             State = true;
         }
-
+    
     }
 }
